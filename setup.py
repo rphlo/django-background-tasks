@@ -16,7 +16,6 @@ setup(
     license='BSD',
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
-    install_requires=open('requirements.txt').read().splitlines(),
     zip_safe=True,
     classifiers=classifiers,
 )

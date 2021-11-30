@@ -42,12 +42,10 @@ Migrate your database:
 
 Supported versions and compatibility
 ====================================
-* Python: 2.7, 3.4-3.7
-* Django: 1.8, 1.11, 2.1, 2.2
+* Python: 3.4-3.9
+* Django: 3.2-4.0
 
 Full Django LTS to LTS compatibility through django-compat_.
-
-*Note: Django 1.8 is an expired LTS release. It's not advisable to use this version of Django anymore.*
 
 
 Creating and registering tasks
@@ -220,8 +218,6 @@ Anyone and everyone is welcome to contribute. Please take a moment to review the
 .. _DelayedJob: http://github.com/tobi/delayed_job
 .. _supervisord: http://supervisord.org/
 .. _this: https://github.com/lilspikey/django-background-task
-.. _compat:  https://github.com/arteria/django-compat
-.. _django-compat:  https://github.com/arteria/django-compat
 .. _25: https://github.com/arteria/django-background-tasks/issues/25
 .. _here: https://github.com/hnakamur/django-background-tasks-example/
 .. _niceness: https://en.wikipedia.org/wiki/Nice_(Unix)
