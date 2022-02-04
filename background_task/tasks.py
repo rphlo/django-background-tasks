@@ -312,8 +312,8 @@ def autodiscover():
         except (AttributeError, ImportError):
             continue
         try:
-            imp.find_module('tasks', app_path)
+            imp.find_module('bg_tasks', app_path)
         except ImportError:
             continue
 
-        import_module("%s.tasks" % app)
+        import_module("%s.bg_tasks" % app)
