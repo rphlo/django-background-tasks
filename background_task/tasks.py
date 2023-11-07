@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from datetime import datetime, timedelta
-from importlib import import_module
+import importlib
 from multiprocessing.pool import ThreadPool
 import logging
 import os
@@ -303,17 +303,14 @@ def autodiscover():
     """
     Autodiscover tasks.py files in much the same way as admin app
     """
-    import imp
     from django.conf import settings
 
     for app in settings.INSTALLED_APPS:
         try:
-            app_path = import_module(app).__path__
+            app_path = importlib.import_module(app).__path__
         except (AttributeError, ImportError):
             continue
-        try:
-            imp.find_module('bg_tasks', app_path)
-        except ImportError:
+        if not importlib.utils.find_spec('bg_tasks', app_path)
             continue
 
-        import_module("%s.bg_tasks" % app)
+        importlib.import_module("%s.bg_tasks" % app)
