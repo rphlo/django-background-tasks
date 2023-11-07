@@ -310,7 +310,7 @@ def autodiscover():
             app_path = import_module(app).__path__
         except (AttributeError, ImportError):
             continue
-        if not importlib.utils.find_spec('bg_tasks', app_path)
+        if not importlib.utils.find_spec('bg_tasks', app_path):
             continue
 
         import_module("%s.bg_tasks" % app)
