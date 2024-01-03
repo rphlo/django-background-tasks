@@ -303,10 +303,9 @@ def autodiscover():
     """
     Autodiscover tasks.py files in much the same way as admin app
     """
-    import importlib.util
     from django.conf import settings
     for app in settings.INSTALLED_APPS:
         try:
             import_module("%s.bg_tasks" % app)
-        except ModuleNotFoundError
+        except ModuleNotFoundError:
             continue
