@@ -307,10 +307,6 @@ def autodiscover():
     from django.conf import settings
     for app in settings.INSTALLED_APPS:
         try:
-            app_path = import_module(app).__path__
-        except (AttributeError, ImportError):
+            import_module("%s.bg_tasks" % app)
+        except ModuleNotFoundError
             continue
-        if not importlib.util.find_spec('bg_tasks', app_path):
-            continue
-
-        import_module("%s.bg_tasks" % app)
